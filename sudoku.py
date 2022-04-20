@@ -43,11 +43,10 @@ class Solution:
             for j in range(deleted[i]):
                 while True:
                     n = random.randint(0, 8)
-                    if n in lst:
-                        continue
-                    else:
+                    if n not in lst:
                         lst.append(n)
                         break
+                        
             for k in lst:
                 modif_m[i, k] = 0
         return modif_m
