@@ -52,8 +52,8 @@ class Solution:
         return modif_m
 
 
-def start_game(completed_matrix):
-    puzzle = puzzle_matrix.copy()
+def start_game(puzz_matrix, completed_matrix):
+    puzzle = puzz_matrix
     objs = Solution
     objs.generate_box(puzzle, puzzle)
     while 0 in puzzle:
@@ -88,4 +88,4 @@ obj = Solution()
 complete_matrix = obj.gen_sudoku()
 puzzle_matrix = obj.generate_puzzle(complete_matrix)
 # Starting the game
-start_game(complete_matrix)
+start_game(puzzle_matrix, complete_matrix)
