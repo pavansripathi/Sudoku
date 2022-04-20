@@ -58,10 +58,13 @@ def start_game(puzz_matrix, completed_matrix):
     objs.generate_box(puzzle, puzzle)
     while 0 in puzzle:
         try:
-            print("Enter row, column number (0-8) and also the actual number (1-9) to enter (like 1, 2, 3 format): ")
+            print("Enter row, column number (0-8) and also the actual number (1-9) to enter (like 1, 2, 3 format (0, 0, 0) to quit the game): ")
             i, j, n = map(int, input().split(","))
         except:
             continue
+        if i == 0 and j == 0 and n == 0:
+            print("Program Terminated Successfully")
+            break
         if puzzle[i, j] != 0:
             print("Please chose a different number")
             continue
@@ -79,8 +82,9 @@ def start_game(puzz_matrix, completed_matrix):
             puzzle[i, j] = n
         os.system("cls")
         objs.generate_box(puzzle, puzzle)
-    print("Congratulations!")
-    print("You solved the puzzle")
+    else:
+        print("Congratulations!")
+        print("You solved the puzzle")
 
 
 
